@@ -7,29 +7,29 @@ import java.awt.event.*;
 public class coursework2 implements ActionListener   // creating the class and implementing the actionlistener.  
 { 
   // constructor bullet point 2 task 1. 
-	private int position =0; // declaring the variable position in order to do part 2 and 3
-	private int nextposition=0;
-	JButton[] button = new JButton[12]; // Creating the array
+	private int position =0; // declared integers only accesible to these methods.
+	private int nextposition=0; // declared integers only accesible to these methods. 
+	JButton[] button = new JButton[12]; // Creating the array and making 12 buttons
 	public coursework2()// Creating the constructor.
  	{
   		GridLayout layout = new GridLayout (3,4); // making the grid 3 by 4. 
  		JFrame z = new JFrame(); // creating the frame.
   		JPanel panel = new JPanel(); // creating the panel. 
-		z.add(panel);
-   		panel.setLayout(layout); 
+		z.add(panel); // adding the panel to the frame.
+   		panel.setLayout(layout); // Adds grid to panel.
 
- 		for(int i=0; i<12; i++)
+ 		for(int i=0; i<12; i++) 
 		{
 			ImageIcon a = new ImageIcon ("bart"+i+".jpg");
 			button[i]= new JButton(a);
 			panel.add(button[i]);
-			button[i].addActionListener(this);
+			button[i].addActionListener(this); // this loop creates a new imageicon and a button then adds the imageicon to the button and then adds a action listener to each button. 
 		}
    
    		z.setVisible(true); // Makes the grid visible.
   		z.setTitle("Puzzle"); // Gives the grid the title Puzzle.
    		z.setSize(450,370); // Sets the size of the grid.
-  		z.setContentPane(panel); 
+  		z.setContentPane(panel); // adds panel
 
   		z.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Exits the grid.
 	}
@@ -37,18 +37,24 @@ public class coursework2 implements ActionListener   // creating the class and i
 public void actionPerformed(ActionEvent e)
    {
 	ImageIcon empty = new ImageIcon("bart0.jpg"); // stores an empty image 
-        Icon tiles = new ImageIcon(); // 
+        Icon tiles = new ImageIcon(); // creates a new imageicon  
 
-	if(e.getSource() == button[0])
+	if(e.getSource() == button[0]) 
 	{
 		nextposition = 0;	
 		if(position == 1|| position == 4){
 			tiles = button[0].getIcon();
 			button[0].setIcon(empty);
 			button[position].setIcon(tiles);
-			position = 0;
+			position = 0; 
 		}
-	}
+	} /** first it gets what button is clicked and if it is button 0... the next is ran.
+		*Next position is the button you click and the if statement is saying that only 
+		*buttons 1 and 4 can be swapped with nextposition because they are next to it. 
+		*tiles stores the button that you have clicked on. 
+		*The next line makes the button you click empty and the next line sets the last
+		*button to tiles (the previously clicked button). The else if just repeat this 			 loop for the button which is clicked. 
+		*/ 
 	else if(e.getSource() == button[1])
 	{
 		nextposition = 1;
@@ -163,10 +169,10 @@ public void actionPerformed(ActionEvent e)
  
    public static void main(String args[])
    {
-     Coursework a = new Coursework();
+     coursework2 a = new coursework2();
      
   }
 
-}
+ 
 }
 
