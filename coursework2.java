@@ -4,13 +4,13 @@ import java.awt.*;
 import java.awt.event.*;
 
 //class bullet point 1 task 1.  
-public class Coursework implements ActionListener   // creating the class and implementing the actionlistener.  
+public class coursework2 implements ActionListener   // creating the class and implementing the actionlistener.  
 { 
   // constructor bullet point 2 task 1. 
 	private int position =0; // declaring the variable position in order to do part 2 and 3
 	private int nextposition=0;
 	JButton[] button = new JButton[12]; // Creating the array
-	public Coursework()// Creating the constructor.
+	public coursework2()// Creating the constructor.
  	{
   		GridLayout layout = new GridLayout (3,4); // making the grid 3 by 4. 
  		JFrame z = new JFrame(); // creating the frame.
