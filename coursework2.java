@@ -10,7 +10,7 @@ public class coursework2 implements ActionListener   // creating the class and i
 	private int position =0; // declared integers only accesible to these methods.
 	private int nextposition=0; // declared integers only accesible to these methods. 
 	JButton[] button = new JButton[12]; // Creating the array and making 12 buttons
-	public coursework2()// Creating the constructor.
+	public coursework2()
  	{
   		GridLayout layout = new GridLayout (3,4); // making the grid 3 by 4. 
  		JFrame z = new JFrame(); // creating the frame.
@@ -23,15 +23,15 @@ public class coursework2 implements ActionListener   // creating the class and i
 			ImageIcon a = new ImageIcon ("bart"+i+".jpg");
 			button[i]= new JButton(a);
 			panel.add(button[i]);
-			button[i].addActionListener(this); // this loop creates a new imageicon and a button then adds the imageicon to the button and then adds a action listener to each button. 
+			button[i].addActionListener(this); // this loop creates a new imageicon 							      and a button then adds the imageicon 								      to the button and then adds a action 								      listener to each button. 
 		}
    
    		z.setVisible(true); // Makes the grid visible.
   		z.setTitle("Puzzle"); // Gives the grid the title Puzzle.
-   		z.setSize(450,370); // Sets the size of the grid.
-  		z.setContentPane(panel); // adds panel
+   		z.setSize(450,370); // Sets the size of the frame.
+  		
 
-  		z.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Exits the grid.
+  		z.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // If the red x is clicked the 									     window will close.
 	}
 
 public void actionPerformed(ActionEvent e)
@@ -48,7 +48,7 @@ public void actionPerformed(ActionEvent e)
 			button[position].setIcon(tiles);
 			position = 0; 
 		}
-	} /** first it gets what button is clicked and if it is button 0... the next is ran.
+	} /** first it gets what button is clicked and if it is button 0... the next bit of the 	      loop is ran.
 		*Next position is the button you click and the if statement is saying that only 
 		*buttons 1 and 4 can be swapped with nextposition because they are next to it. 
 		*tiles stores the button that you have clicked on. 
@@ -169,7 +169,7 @@ public void actionPerformed(ActionEvent e)
  
    public static void main(String args[])
    {
-     coursework2 a = new coursework2();
+     coursework2 a = new coursework2(); // runs program 
      
   }
 
